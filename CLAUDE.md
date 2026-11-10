@@ -24,3 +24,7 @@ The default coding task is **engine feasibility**, not building an enterprise tr
 This repository is public; never add private on-call contact details, investor requests, adviser/researcher identity, production credentials, SOC reports or nonpublic control architecture. Ensure execution-only algorithm integration remains in private EMS. If engine changes are needed, restrict them to small, upstream-compatible extensions exposing lifecycle health, order-event source identifiers, restart epoch and broker reconciliation support. This fork must not become an alternative OMS, PMS, fund accounting or compliance system.
 
 Use deterministic local simulation for halt, unknown order, gateway loss, process restart and no-blind-resend tests. Any diagnostics must omit trading secrets, investor data and proprietary alpha. Provide stable version/build provenance for the EMS evidence chain, while leaving firm policy and formal assurance in private tech-docs and EMS.
+
+## Public local/AWS validation protocol (added 2026-11-10)
+
+Use [Documentation/1000Plus-Local-Engine-Validation.md](Documentation/1000Plus-Local-Engine-Validation.md) to record fork SHA, .NET build results, plugin/license checks and MockBroker integration limitations. Do not place private EMS code or firm-specific ODD records in this public fork. Engine build success is not evidence of account-level execution recovery or live readiness.
