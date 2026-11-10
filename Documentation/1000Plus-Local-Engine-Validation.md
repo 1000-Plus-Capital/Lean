@@ -28,3 +28,13 @@ Do not label these commands as successfully tested until a CI/local run records 
 **Acceptance:** a private EMS integration test, not this public fork's build, must prove pre-send durability and no duplicate broker transmission after an ambiguous ACK. Local mock testing does not prove live PB compatibility, adviser regulatory compliance or institutional ODD operating effectiveness.
 
 This file intentionally excludes nonpublic internal documentation and contact details.
+
+## External-engine integration failure matrix (private execution tests required)
+
+This public file defines a **build/test protocol**, not broker safety implementation. Capture `git rev-parse HEAD`, `dotnet --info`, restored NuGet dependency manifest and Release build output; retain CI logs outside the public repository when they contain nonpublic references. Do not guess SDK requirements from unrelated sample workflows.
+
+The private EMS integration must inject, then verify, all of these conditions before live use: worker killed between broker send and ACK; stale worker resuming after a new execution generation; partial fill arriving after a cancel request; engine unable to enumerate all broker open orders; gateway reauthentication; identical broker execution delivered twice; and a restored journal older than PB order history.
+
+A LEAN process restart is **not** authority to start orders. LEAN may be healthy while a broker-resting order remains active and the private EMS state is UNKNOWN. If the broker/adapter cannot enforce sender fencing, no automatic active-worker failover is allowed. Proven old-session termination, PB order/fill read-back, independent PMS verification and authorized resume are prerequisites. Keep all account identifiers, proprietary algorithms, broker captures, investor records and internal control evidence out of this public fork.
+
+**Verification status:** scenarios are obligations in the private EMS; this document does not demonstrate that they were run.
