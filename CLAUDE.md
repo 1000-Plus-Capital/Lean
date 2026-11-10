@@ -18,3 +18,9 @@ This is a **public Apache-2.0 fork** of [QuantConnect/Lean](https://github.com/Q
 No production broker accounts, no order-routing changes in upstream without approved tests, no server-side proprietary investment logic, no live credentials, no copying code or internal documents from private repositories. Separate process health from trading readiness. Treat restored LEAN tickets as transient; the firm-specific EMS owns durable attempt history and the PMS independently reconciles broker results.
 
 The default coding task is **engine feasibility**, not building an enterprise trading platform in this public repo. Keep patches small and follow standard upstream project conventions.
+
+## Public fork boundary and operational hooks
+
+This repository is public; never add private on-call contact details, investor requests, adviser/researcher identity, production credentials, SOC reports or nonpublic control architecture. Ensure execution-only algorithm integration remains in private EMS. If engine changes are needed, restrict them to small, upstream-compatible extensions exposing lifecycle health, order-event source identifiers, restart epoch and broker reconciliation support. This fork must not become an alternative OMS, PMS, fund accounting or compliance system.
+
+Use deterministic local simulation for halt, unknown order, gateway loss, process restart and no-blind-resend tests. Any diagnostics must omit trading secrets, investor data and proprietary alpha. Provide stable version/build provenance for the EMS evidence chain, while leaving firm policy and formal assurance in private tech-docs and EMS.
